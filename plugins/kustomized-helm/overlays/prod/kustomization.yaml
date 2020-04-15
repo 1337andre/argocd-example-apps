@@ -4,4 +4,4 @@ bases:
 - ../../base
 
 patches:
-- overlays/guestbook-deployment.yaml
+- guestbook-deployment.yaml
