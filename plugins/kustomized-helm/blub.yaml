@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: kustomized-helm-prod
+  namespace: argocd
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    namespace: default
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: plugins/kustomized-helm
+    plugin:
+      name: kustomized-helm
+      env:
+        - name: releaseName
+          value: myhelmrelease
+        - name: overlayPath
+          value: "overlays/prod"
+    repoURL: https://github.com/1337andre/argocd-example-apps

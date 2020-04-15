@@ -1,0 +1,7 @@
+namePrefix: kustomize-
+
+resources:
+- ./all.yaml
+
+commonLabels:
+  my: extraLabels

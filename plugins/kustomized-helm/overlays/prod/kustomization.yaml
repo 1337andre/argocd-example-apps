@@ -1,7 +1,7 @@
-namePrefix: kustomize-
+namePrefix: prod-
 
-resources:
-- ./all.yaml
+bases:
+- ../../base
 
 patches:
 - overlays/guestbook-deployment.yaml
